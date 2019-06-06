@@ -7,18 +7,37 @@ canvas.height = window.innerHeight;
 const gameBtn = document.getElementById('game-btn');
 const cover = document.getElementById('cover-content');
 const game = document.getElementById('game-content');
+var animation = null;
 var stars;
+var initGen = false;
 
 window.addEventListener("resize", function() {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 });
 
+window.addEventListener("keydown", e => {
+	switch(e.code) {
+		case 'Enter':
+			gameBtn.click();
+		break;
+	}
+});
+
 gameBtn.addEventListener('click', () => {
-	cover.style.display = 'none';
-	game.style.display = 'block';
-	stars = new StarObj();
-	play();
+	if (initGen == false) {
+		cover.style.display = 'none';
+		game.style.display = 'block';
+		stars = new StarObj();
+		play();
+		initGen = true;
+	} else if (initGen == true) {
+		window.cancelAnimationFrame(animation);
+		delete stars;
+		cover.style.display = 'flex';
+		game.style.display = 'none';
+		initGen = false;
+	}
 });
 
 const drawBackground = () => {
@@ -31,7 +50,7 @@ const drawBackground = () => {
 
 const play = () => {
 	// recommence the loop
-	window.requestAnimationFrame(play);
+	animation = window.requestAnimationFrame(play);
 
 	// redraw the background
 	ctx.fillStyle = drawBackground();
