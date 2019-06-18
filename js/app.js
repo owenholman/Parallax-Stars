@@ -16,7 +16,7 @@ var animation = null;
 var stars;
 var initGen = false;
 
-window.addEventListener("resize", e => { // begin resize event listener; triggers when browser is resized
+window.addEventListener("resize", () => { // begin resize event listener; triggers when browser is resized
 	// changes the canvas dimensions to properly reflect the changes
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
