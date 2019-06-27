@@ -3,22 +3,19 @@
 <head>
 	<title>Parallax Stars</title>
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="css/styles.css"></link>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<style type="text/css">
+		html,
+		body {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+		}
+	</style>
 </head>
 <body>
-	<div id="cover-content">
-		<div id="title-sec">
-			<h1>JavaScript Parallax Stars</h1>
-			<input id="game-btn" type="button" value="Begin Animation">
-		</div>
-	</div>
-	<div id="game-content">
-		<div id="game-info">
-			<input id="game-info-status" type="button">
-		</div>
-		<canvas id="game"></canvas>
-	</div>
-	<script type="text/javascript" src="js/app.js"></script>
-	<script type="text/javascript" src="js/stars.js"></script>
+	<canvas id="animation"></canvas>
+	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>
