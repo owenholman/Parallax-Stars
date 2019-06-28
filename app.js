@@ -40,7 +40,7 @@ var Stars = function() {
 			this.x = getRandomNum(0, canvas.width);
 			this.y = getRandomNum(0, canvas.height);
 			this.l = getRandomNum(0.01, 5);
-			this.dy = 1.5 / this.l;
+			this.dy = this.l / 10;
 			this.stars.push({
 				x: this.x,
 				y: this.y,
@@ -63,7 +63,7 @@ var Stars = function() {
 				this.x = getRandomNum(0, canvas.width);
 				this.y = canvas.height;
 				this.l = getRandomNum(0.01, 5);
-				this.dy = 1.5 / this.l;
+				this.dy = this.l / 10;
 				this.stars.push({
 					x: this.x,
 					y: this.y,
